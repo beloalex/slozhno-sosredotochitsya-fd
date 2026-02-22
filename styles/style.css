@@ -337,6 +337,7 @@ picture {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
     gap: 20px;
+    min-block-size: 780px;
     max-block-size: 780px;
   }
 
@@ -375,6 +376,7 @@ picture {
 
 @media (width >= 1024px) {
   .gallery {
+    min-block-size: 1048px;
     max-block-size: 1048px;
   }
 }
