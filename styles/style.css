@@ -198,6 +198,7 @@
   line-height: var(--line-height);
   background-color: var(--accent-color, #ff0070);
   max-height: 117px;
+  margin-block-end: 24px;
 }
 
 @media (width > 375px) {
