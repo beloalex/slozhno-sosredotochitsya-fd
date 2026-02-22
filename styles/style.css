@@ -235,7 +235,7 @@ a:hover {
 }
 
 a:focus-visible {
-  outline: 1px solid var(--link-border-focus);
+  outline: 1px solid var(--link-border-focus, #f1b2ce);
 }
 
 .content {
@@ -292,7 +292,7 @@ a:focus-visible {
   font-family: inherit;
   font-weight: var(--regular-font-weight);
   font-size: var(--main-text-size);
-  color: var(--text-color-primary);
+  color: var(--text-color-primary, #f1b2ce);
   line-height: var(--line-height);
 }
 
