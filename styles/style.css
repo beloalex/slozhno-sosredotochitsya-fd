@@ -2,28 +2,29 @@
   font-family: var(--main-font, sans-serif);
   background-image: var(--bg-image);
   background-position: center;
+  background-size: co;
   background-attachment: fixed;
   background-color: var(--bg-color, #000028);
-  padding: var(--padding);
 }
 
 .header {
+  height: 100vh;
+  min-block-size: 668px;
+  padding: var(--padding);
   position: relative;
   display: grid;
   grid-template-columns: auto;
-  min-height: 100vh;
-  min-block-size: 648px;
 }
 
 @media (width >= 768px) {
   .header {
-    min-block-size: 984px;
+    min-block-size: 1024px;
   }
 }
 
 @media (width >= 1024px) {
   .header {
-    min-block-size: 728px;
+    min-block-size: 768px;
   }
 }
 
@@ -59,7 +60,6 @@
 
 .header__theme-menu-item {
   width: 70px;
-  height: 26px;
   font-family: inherit;
   color: var(--button-text-color, #ff0070);
   font-size: var(--main-text-size);
@@ -101,8 +101,8 @@
 
 .text-decor {
   position: absolute;
-  top: 0;
-  right: 9px;
+  top: var(--padding);
+  right: calc(var(--padding) + 9px);
   font-family: inherit;
   font-weight: var(--regular-font-weight);
   font-size: var(--main-text-size);
@@ -128,8 +128,8 @@
   content: "";
   display: inline-block;
   position: absolute;
-  top: 0;
-  right: 0;
+  top: var(--padding);
+  right: var(--padding);
   inline-size: 25px;
   block-size: 25px;
   border-top: 1px solid var(--decorate-item-color, #ff0070);
@@ -140,8 +140,8 @@
   content: "";
   display: inline-block;
   position: absolute;
-  bottom: 0;
-  left: 0;
+  bottom: var(--padding);
+  left: var(--padding);
   inline-size: 25px;
   block-size: 25px;
   border-bottom: 1px solid var(--decorate-item-color, #ff0070);
@@ -175,14 +175,20 @@
   font-family: inherit;
   font-weight: var(--bold-font-weight);
   font-size: var(--main-text-size);
-  color: var(--accent-color, #ff0070);
+  color: var(--text-color-special, #ff0070);
   line-height: var(--line-height);
 }
 
 @media (width >= 768px) {
   .heading-attention {
     width: 236px;
-    height: 70px;
+    padding-right: 10px;
+  }
+}
+
+@media (width >= 1024px) {
+  .heading-attention {
+    padding: 0;
   }
 }
 
@@ -194,7 +200,7 @@
   color: var(--text-color-secondary, #000028);
   line-height: var(--line-height);
   background-color: var(--accent-color, #ff0070);
-  max-height: 117px;
+  height: min-content;
   margin-block-end: 24px;
 }
 
@@ -208,8 +214,9 @@
 @media (width >= 1024px) {
   .paragraph-decor {
     width: 491px;
-    height: 71px;
+    height: min-content;
     justify-self: end;
+    margin: 0;
   }
 }
 
@@ -239,6 +246,7 @@ a:focus-visible {
 .content {
   display: grid;
   grid-template-columns: 1fr;
+  padding: 0 var(--padding) 0 var(--padding);
   gap: var(--gap-main-content);
   margin-block-start: var(--margin-main-content);
   margin-block-end: var(--margin-main-content);
@@ -258,13 +266,7 @@ a:focus-visible {
   }
 
   .heading-attention {
-    grid-column: 1;
-    grid-row: 1;
-    height: auto;
-  }
-
-  .card__attention {
-    grid-row: 2;
+    grid-column: 1 / -1;
   }
 }
 
@@ -324,20 +326,27 @@ picture {
   }
 }
 
+@media (width >= 1024px) {
+  .focus {
+    grid-template-columns: calc((100vw - 80px) / 3) 2fr;
+  }
+
+  .better-way {
+    grid-template-columns: calc((100vw - 80px) / 3) 2fr;
+  }
+}
+
 .gallery {
   display: grid;
   grid-template-columns: 1fr;
   gap: 10px;
-  min-block-size: 1366px;
 }
 
 @media (width >= 768px) {
   .gallery {
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-rows: repeat(3, max-content);
     gap: 20px;
-    min-block-size: 780px;
-    max-block-size: 780px;
   }
 
   .gallery__image {
@@ -373,14 +382,7 @@ picture {
   }
 }
 
-@media (width >= 1024px) {
-  .gallery {
-    min-block-size: 1048px;
-    max-block-size: 1048px;
-  }
-}
-
-.card__better-way h2:nth-child(2) {
+.card__better-way h3:nth-child(2) {
   margin-block-start: 10px;
 }
 
@@ -388,10 +390,11 @@ picture {
   position: relative;
   display: grid;
   grid-template-columns: 1fr;
+  padding: var(--padding);
   align-content: center;
   justify-content: center;
-  min-height: 100vh;
-  min-block-size: 648px;
+  height: 100vh;
+  min-block-size: 668px;
 }
 
 .footer__title {
@@ -400,18 +403,18 @@ picture {
   font-size: var(--title-size);
   color: var(--title-color);
   line-height: 83%;
-  text-shadow: var(--text-shadow);
+  text-shadow: 2px 2px 0 #ff0070;
   justify-self: center;
 }
 
 @media (width >= 768px) {
   .footer {
-    min-block-size: 984px;
+    min-block-size: 1024px;
   }
 }
 
 @media (width >= 1024px) {
   .footer {
-    min-block-size: 728px;
+    min-block-size: 768px;
   }
 }

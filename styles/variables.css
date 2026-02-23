@@ -7,7 +7,7 @@
   --text-shadow: 4px 4px 0 var(--accent-color);
   --title-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   --padding: 10px;
-  --margin-main-content: 50px;
+  --margin-main-content: 40px;
   --gap-main-content: 50px;
   --bg-image: url(../images/cover-image-dark.png);
   --accent-color: #ff0070;
@@ -20,6 +20,7 @@
   --link-border-focus: #f1b2ce;
   --decorate-item-color: #ff0070;
   --bg-color: #000028;
+  --text-color-special: #ff0070;
   --text-color-primary: #f1b2ce;
   --text-color-secondary: #000028;
   --title-color: #db00ff;
@@ -34,7 +35,7 @@
 @media (width >= 768px) {
   :root {
     --padding: 20px;
-    --margin-main-content: 80px;
+    --margin-main-content: 60px;
     --gap-main-content: 80px;
   }
 }
