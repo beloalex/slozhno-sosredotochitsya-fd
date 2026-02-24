@@ -2,7 +2,7 @@
   font-family: var(--main-font, sans-serif);
   background-image: var(--bg-image);
   background-position: center;
-  background-size: co;
+  background-size: cover;
   background-attachment: fixed;
   background-color: var(--bg-color, #000028);
 }
@@ -201,7 +201,6 @@
   line-height: var(--line-height);
   background-color: var(--accent-color, #ff0070);
   height: min-content;
-  margin-block-end: 24px;
 }
 
 @media (width > 375px) {
@@ -382,7 +381,7 @@ picture {
   }
 }
 
-.card__better-way h3:nth-child(2) {
+.card__better-way h4:nth-child(2) {
   margin-block-start: 10px;
 }
 

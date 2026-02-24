@@ -14,4 +14,8 @@
   --text-color-primary: #f1b2ce;
   --text-color-secondary: #000028;
   --title-color: #db00ff;
+
+   .text-decor {
+    display: block;
+  }
 }

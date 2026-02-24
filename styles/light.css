@@ -39,11 +39,7 @@
     --title-color: #ffc2e6;
   }
 
-  .text-decor {
-    display: none;
-  }
-
-  .text-decor::after {
+    .text-decor {
     display: none;
   }
 }
